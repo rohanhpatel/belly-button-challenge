@@ -77,10 +77,45 @@ function updateBubbleGraph(dataset) {
     });
 }
 
+// function updateGaugeGraph(dataset) {
+//     d3.json(url).then((data) => {
+//         // find the data point in metadata
+//         let metaPoint = data.metadata.filter((sample) => sample.id == dataset)[0];
+
+//         // using washing frequency as the value for the gauge graph
+//         let bubbleGraphData = [{
+//             domain: {x: [0, 1], y: [0, 1]},
+//             value: metaPoint.wfreq,
+//             title: {text: "Belly Button Washing Frequency"},
+//             type: "indicator",
+//             mode: "gauge",
+//             gauge: {
+//                 axis: {range: [null, 9]},
+//                 steps: [
+//                     {range: [0, 1], color: "lightgray", text: "0-1"},
+//                     {range: [1, 2], color: "white", text: "1-2"},
+//                     {range: [2, 3], color: "lightyellow", text: "2-3"},
+//                     {range: [3, 4], color: "yellow", text: "3-4"},
+//                     {range: [4, 5], color: "lime", text: "4-5"},
+//                     {range: [5, 6], color: "lightgreen", text: "5-6"},
+//                     {range: [6, 7], color: "forestgreen", text: "6-7"},
+//                     {range: [7, 8], color: "green", text: "7-8"},
+//                     {range: [8, 9], color: "darkgreen", text: "8-9"}
+//                 ]
+//             }
+//         }];
+
+//         let layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
+
+//         Plotly.newPlot("gauge", bubbleGraphData, layout);
+//     });
+// }
+
 function updateAllGraphs(dataset) {
     updateBarGraph(dataset);
     updateMetadataInfo(dataset);
     updateBubbleGraph(dataset);
+    // updateGaugeGraph(dataset);
 }
 
 // on dropdown change, change the plots
